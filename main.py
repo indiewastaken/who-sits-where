@@ -16,13 +16,13 @@ exam_date = "May 2, 2025"
 
 lock = threading.Lock()
 
-with open("exam_schedule_may2.csv", "w", newline="") as f:
+with open("exam_schedule.csv", "w", newline="") as f:
     writer = csv.writer(f)
     writer.writerow(["Student Name", "Student ID", "Exam Date", "Room Number", "Subject Name", "Subject Code", "Seat Number"])
 
 def save_to_csv(row):
     with lock:
-        with open("exam_schedule_may2.csv", "a", newline="") as f:
+        with open("exam_schedule.csv", "a", newline="") as f:
             writer = csv.writer(f)
             writer.writerow(row)
 
